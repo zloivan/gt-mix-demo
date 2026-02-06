@@ -1,3 +1,5 @@
+// Fix: Add triple-slash directive to include Vite's client types, which defines `import.meta.env`.
+/// <reference types="vite/client" />
 
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -14,7 +16,10 @@ const MapSection: React.FC = () => {
   };
   
   const mapLanguage = getMapLanguage(language);
-  const mapUrl = `https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS_API_KEY}&q=GT+MIX,Raphiel+Agladze+Street+30,Tbilisi,Georgia&center=${CONTACT_INFO.coordinates.lat},${CONTACT_INFO.coordinates.lng}&zoom=17&language=${mapLanguage}`;
+  // Use Vite's syntax for environment variables
+  // Fix: Use the standard Vite `import.meta.env` to access environment variables.
+  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+  const mapUrl = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=GT+MIX,Raphiel+Agladze+Street+30,Tbilisi,Georgia&center=${CONTACT_INFO.coordinates.lat},${CONTACT_INFO.coordinates.lng}&zoom=17&language=${mapLanguage}`;
 
   const getAddress = () => {
     switch (language) {
