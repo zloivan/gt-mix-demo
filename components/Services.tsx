@@ -1,12 +1,13 @@
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { SERVICES_LIST } from '../constants';
 import { useTranslations } from '../contexts/LanguageContext';
 
 const accentColors = ['#007AFF', '#FF3B30'];
 
-const cardVariants = {
+// Fix: Add Variants type for Framer Motion props.
+const cardVariants: Variants = {
   offscreen: {
     y: 50,
     opacity: 0,

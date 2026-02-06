@@ -1,6 +1,3 @@
-// Fix: Add reference to vite/client to provide global type definitions for import.meta.env.
-/// <reference types="vite/client" />
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';

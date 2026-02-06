@@ -1,9 +1,9 @@
-
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  // IMPORTANT: This base path should match your GitHub repository name.
+  // ВАЖНО: Замени '/gt-mix-demo/' на '/НАЗВАНИЕ-ТВОЕГО-РЕПОЗИТОРИЯ/'
+  // Если репозиторий называется gt-mix-demo, оставь как есть.
   base: '/gt-mix-demo/',
 });

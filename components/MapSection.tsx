@@ -13,7 +13,8 @@ const MapSection: React.FC = () => {
   };
   
   const mapLanguage = getMapLanguage(language);
-  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+  // Fix: Cast import.meta to any to avoid TypeScript error about 'env' not existing on 'ImportMeta'
+  const apiKey = (import.meta as any).env.VITE_GOOGLE_MAPS_API_KEY;
   const mapUrl = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=GT+MIX,Raphiel+Agladze+Street+30,Tbilisi,Georgia&center=${CONTACT_INFO.coordinates.lat},${CONTACT_INFO.coordinates.lng}&zoom=17&language=${mapLanguage}`;
 
   const getAddress = () => {

@@ -1,6 +1,6 @@
 
 import React, { Suspense, lazy } from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { useTranslations } from '../contexts/LanguageContext';
 
@@ -10,7 +10,8 @@ const Hero: React.FC = () => {
   const { t } = useTranslations();
   const title = "GT MIX";
   
-  const containerVariants = {
+  // Fix: Add Variants type for Framer Motion props.
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -21,7 +22,8 @@ const Hero: React.FC = () => {
     },
   };
 
-  const letterVariants = {
+  // Fix: Add Variants type for Framer Motion props.
+  const letterVariants: Variants = {
     hidden: { opacity: 0, y: 50, filter: 'blur(10px)' },
     visible: {
       opacity: 1,
