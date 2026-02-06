@@ -1,6 +1,3 @@
-// Fix: Add reference to vite/client to provide type definitions for import.meta.env
-/// <reference types="vite/client" />
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CONTACT_INFO } from '../constants';
