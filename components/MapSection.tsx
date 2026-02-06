@@ -1,4 +1,4 @@
-// Fix: Add triple-slash directive to include Vite's client types, which defines `import.meta.env`.
+// Fix: Add reference to vite/client to provide type definitions for import.meta.env
 /// <reference types="vite/client" />
 
 import React from 'react';
@@ -16,8 +16,6 @@ const MapSection: React.FC = () => {
   };
   
   const mapLanguage = getMapLanguage(language);
-  // Use Vite's syntax for environment variables
-  // Fix: Use the standard Vite `import.meta.env` to access environment variables.
   const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
   const mapUrl = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=GT+MIX,Raphiel+Agladze+Street+30,Tbilisi,Georgia&center=${CONTACT_INFO.coordinates.lat},${CONTACT_INFO.coordinates.lng}&zoom=17&language=${mapLanguage}`;
 

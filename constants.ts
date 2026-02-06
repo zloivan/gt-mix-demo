@@ -2,7 +2,8 @@
 import { Package, Car, Wrench, Zap } from 'lucide-react';
 
 export const CONTACT_INFO = {
-  phone: '+95 598 27 51 11',
+  // Fix: Corrected the country code for the phone number.
+  phone: '+995 598 27 51 11',
   email: 'bekaamirashvili@gmail.com',
   address: 'Raphiel Agladze Street, 30, Didube, Tbilisi',
   addressGeorgian: 'რ. აგლაძის ქ. 30, დიდუბე, თბილისი',
