@@ -13,9 +13,10 @@ const MapSection: React.FC = () => {
   };
   
   const mapLanguage = getMapLanguage(language);
-  // Fix: Cast import.meta to any to avoid TypeScript error about 'env' not existing on 'ImportMeta'
-  const apiKey = (import.meta as any).env.VITE_GOOGLE_MAPS_API_KEY;
-  const mapUrl = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=GT+MIX,Raphiel+Agladze+Street+30,Tbilisi,Georgia&center=${CONTACT_INFO.coordinates.lat},${CONTACT_INFO.coordinates.lng}&zoom=17&language=${mapLanguage}`;
+  
+  // Мы переходим на формат URL, который не требует API ключа.
+  // Это позволит карте работать без настройки Google Cloud Console.
+  const mapUrl = `https://maps.google.com/maps?q=${CONTACT_INFO.coordinates.lat},${CONTACT_INFO.coordinates.lng}&hl=${mapLanguage}&z=17&ie=UTF8&iwloc=B&output=embed`;
 
   const getAddress = () => {
     switch (language) {
